@@ -1,0 +1,119 @@
+.add-task-page {
+  padding: var(--spacing-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.add-task-header {
+  margin-bottom: var(--spacing-xl);
+}
+
+.add-task-header h1 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.add-task-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.add-task-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  max-width: 700px;
+}
+
+.add-task-card .form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.add-task-card .form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.required {
+  color: var(--accent-red);
+}
+
+.add-task-card input,
+.add-task-card select {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+.add-task-card input.input-error,
+.add-task-card select.input-error {
+  border-color: var(--accent-red);
+}
+
+.task-id-preview {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+.task-id-preview .id-value {
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+.form-actions {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.btn-add-task {
+  padding: 10px 24px;
+  background-color: var(--accent-purple);
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-add-task:hover {
+  background-color: var(--accent-purple-hover);
+}
+
+.btn-form-cancel {
+  padding: 10px 24px;
+  background-color: var(--bg-hover);
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+}
+
+.btn-form-cancel:hover {
+  color: var(--text-primary);
+}
+
+@media (max-width: 480px) {
+  .add-task-card {
+    padding: var(--spacing-md);
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions button {
+    width: 100%;
+  }
+}
