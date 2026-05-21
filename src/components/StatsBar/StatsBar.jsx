@@ -1,4 +1,4 @@
-import { useTask } from "../context/TaskContext";
+import { useTask } from "../../context/TaskContext";
 import "./StatsBar.css";
 
 const StatsBar = () => {

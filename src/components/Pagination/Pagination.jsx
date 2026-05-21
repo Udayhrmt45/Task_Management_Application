@@ -1,4 +1,4 @@
-import { useTask } from "../context/TaskContext";
+import { useTask } from "../../context/TaskContext";
 import { useSearchParams } from "react-router-dom";
 import "./Pagination.css";
 

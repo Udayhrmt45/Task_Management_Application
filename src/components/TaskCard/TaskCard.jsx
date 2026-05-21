@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useTask } from "../context/TaskContext";
+import { useTask } from "../../context/TaskContext";
 import "./TaskCard.css";
 
 const TaskCard = ({ task }) => {

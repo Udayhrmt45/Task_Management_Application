@@ -1,6 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
-import logoSvg from "../assets/logo.svg";
+import { useAuth } from "../../context/AuthContext";
+import logoSvg from "../../assets/logo.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
