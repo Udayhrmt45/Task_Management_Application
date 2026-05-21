@@ -6,7 +6,7 @@ import "./AddTaskPage.css";
 
 const AddTaskPage = () => {
   const navigate = useNavigate();
-  const { addTask, getNextId } = useTask();
+  const { addTask, getNextId, setStatusFilter } = useTask();
 
   const nextId = getNextId();
 
@@ -46,6 +46,7 @@ const AddTaskPage = () => {
     };
 
     addTask(newTask);
+    setStatusFilter("All");
 
     navigate("/home");
   };
