@@ -1,3 +1,11 @@
+export const preventLeadingSpace = (event) => {
+  if (event.key === " " && event.currentTarget.value.length === 0) {
+    event.preventDefault();
+  }
+};
+
+export const removeLeadingSpaces = (value) => value.replace(/^\s+/, "");
+
 export const validateLogin = ({ name, email, password }) => {
   const errors = {};
 
@@ -16,7 +24,7 @@ export const validateLogin = ({ name, email, password }) => {
     }
   }
 
-  if (!password || password === "") {
+  if (!password || password.trim() === "") {
     errors.password = "Password is required";
   } else if (password.length < 6) {
     errors.password = "Password must be at least 6 characters";

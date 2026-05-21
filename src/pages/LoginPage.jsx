@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { validateLogin } from "../utils/validators";
+import {
+  preventLeadingSpace,
+  removeLeadingSpaces,
+  validateLogin,
+} from "../utils/validators";
 import logoSvg from "../assets/logo.svg";
 import "./LoginPage.css";
 
@@ -19,8 +23,9 @@ const LoginPage = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    const sanitizedValue = removeLeadingSpaces(value);
 
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: sanitizedValue }));
 
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
@@ -63,6 +68,7 @@ const LoginPage = () => {
               placeholder="e.g. Deepak Kumar"
               value={formData.name}
               onChange={handleChange}
+              onKeyDown={preventLeadingSpace}
               className={errors.name ? "input-error" : ""}
             />
             {errors.name && <p className="error-message">{errors.name}</p>}
@@ -77,6 +83,7 @@ const LoginPage = () => {
               placeholder="you@example.com"
               value={formData.email}
               onChange={handleChange}
+              onKeyDown={preventLeadingSpace}
               className={errors.email ? "input-error" : ""}
             />
             {errors.email && <p className="error-message">{errors.email}</p>}
@@ -91,6 +98,7 @@ const LoginPage = () => {
               placeholder="Min 6 chars, 1 uppercase, 1 number"
               value={formData.password}
               onChange={handleChange}
+              onKeyDown={preventLeadingSpace}
               className={errors.password ? "input-error" : ""}
             />
             {errors.password && (
