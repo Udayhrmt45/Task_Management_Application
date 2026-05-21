@@ -1,5 +1,6 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import logoSvg from "../assets/logo.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -14,7 +15,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-logo">
-        <span className="logo-icon">○</span>
+        <img src={logoSvg} alt="TaskFlow Logo" className="logo-img" />
         <span>TaskFlow</span>
       </div>
 
@@ -23,18 +24,18 @@ const Navbar = () => {
           to="/home"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          🏠 Home
+          Home
         </NavLink>
         <NavLink
           to="/add-task"
           className={({ isActive }) => (isActive ? "active" : "")}
         >
-          + Add Task
+          Add Task
         </NavLink>
       </div>
 
       <div className="navbar-user">
-        <span className="navbar-username">👤 {user.name}</span>
+        <span className="navbar-username">{user.name}</span>
         <button className="navbar-logout" onClick={handleLogout}>
           Logout
         </button>

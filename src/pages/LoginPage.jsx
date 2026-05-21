@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { validateLogin } from "../utils/validators";
+import logoSvg from "../assets/logo.svg";
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -45,19 +46,21 @@ const LoginPage = () => {
     <div className="login-page">
       <div className="login-card">
         <div className="login-header">
-          <div className="login-logo">🔐</div>
-          <h1>Welcome to TaskFlow</h1>
-          <p>Sign in to manage your tasks</p>
+          <img src={logoSvg} alt="TaskFlow Logo" className="login-logo" />
+          <div className="login-title">
+            <h1>TaskFlow</h1>
+            <p>Sign in to manage your tasks</p>
+          </div>
         </div>
 
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="name">FULL NAME</label>
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Enter your name"
+              placeholder="e.g. Deepak Kumar"
               value={formData.name}
               onChange={handleChange}
               className={errors.name ? "input-error" : ""}
@@ -66,12 +69,12 @@ const LoginPage = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="email">Email</label>
+            <label htmlFor="email">EMAIL ADDRESS</label>
             <input
               type="text"
               id="email"
               name="email"
-              placeholder="Enter your email"
+              placeholder="you@example.com"
               value={formData.email}
               onChange={handleChange}
               className={errors.email ? "input-error" : ""}
@@ -80,12 +83,12 @@ const LoginPage = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">PASSWORD</label>
             <input
               type="password"
               id="password"
               name="password"
-              placeholder="Enter your password"
+              placeholder="Min 6 chars, 1 uppercase, 1 number"
               value={formData.password}
               onChange={handleChange}
               className={errors.password ? "input-error" : ""}
@@ -96,8 +99,11 @@ const LoginPage = () => {
           </div>
 
           <button type="submit" className="login-btn" id="login-button">
-            Login
+            Sign In →
           </button>
+          <p className="login-footnote">
+            Password must be 6+ characters with an uppercase letter and a number.
+          </p>
         </form>
       </div>
     </div>
