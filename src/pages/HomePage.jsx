@@ -1,9 +1,10 @@
 import { useAuth } from "../context/AuthContext";
 import { useTask } from "../context/TaskContext";
-import StatsBar from "../components/StatsBar";
-import SearchFilter from "../components/SearchFilter";
-import TaskCard from "../components/TaskCard";
-import Pagination from "../components/Pagination";
+import Navbar from "../components/Navbar/Navbar";
+import StatsBar from "../components/StatsBar/StatsBar";
+import SearchFilter from "../components/SearchFilter/SearchFilter";
+import TaskCard from "../components/TaskCard/TaskCard";
+import Pagination from "../components/Pagination/Pagination";
 import "./HomePage.css";
 
 const HomePage = () => {
